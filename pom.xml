@@ -14,12 +14,13 @@
   <parent>
     <groupId>com.edugility</groupId>
     <artifactId>edugility-oss-corporate-pom</artifactId>
-    <version>1</version>
+    <version>2</version>
   </parent>
 
   <name>Edugility Open Source Plugin Management POM</name>
   <description>Edugility Open Source Plugin Management POM</description>
   <inceptionYear>2013</inceptionYear>
+  <url>${project.scm.url}</url>
 
   <scm>
     <connection>scm:git:git@github.com:ljnelson/${project.artifactId}.git</connection>
@@ -66,10 +67,6 @@
           <version>2.4</version>
         </plugin>
         <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.9.1</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>2.6</version>
         </plugin>
@@ -81,6 +78,23 @@
           <artifactId>maven-war-plugin</artifactId>
           <version>2.4</version>
         </plugin>
+        <plugin>
+          <groupId>com.github.github</groupId>
+          <artifactId>site-maven-plugin</artifactId>
+          <version>0.9</version>
+          <configuration>
+            <message>Building site for ${project.artifactId} ${project.version}</message>
+          </configuration>
+          <executions>
+            <execution>
+              <id>Deploy site to Github</id>
+              <goals>
+                <goal>site</goal>
+              </goals>
+              <phase>site-deploy</phase>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
@@ -91,8 +105,6 @@
     <ejb.ejbVersion>3.1</ejb.ejbVersion>
 
     <!-- maven-compiler-plugin properties -->
-    <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
-    <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
     <maven.compiler.source>1.6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
 
@@ -100,6 +112,15 @@
     <bottom><![CDATA[Copyright &copy; ${project.inceptionYear}&ndash;{currentYear}, <a href="http://about.me/lairdnelson" target="_parent">Laird Nelson</a>. All rights reserved.]]></bottom>
     <detectLinks>false</detectLinks>
     <sourcetab>2</sourcetab>
+
+    <!-- maven-site-plugin properties -->
+    <maven.site.deploy.skip>true</maven.site.deploy.skip>
+
+    <!-- maven-surefire-plugin properties -->
+    <surefire.useFile>false</surefire.useFile>
+
+    <!-- site-github-plugin properties -->
+    <github.global.server>github</github.global.server>
 
   </properties>
 
