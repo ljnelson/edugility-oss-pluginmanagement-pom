@@ -21,6 +21,16 @@
   <description>Edugility Open Source Plugin Management POM</description>
   <inceptionYear>2013</inceptionYear>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <build>
     <pluginManagement>
       <plugins>
