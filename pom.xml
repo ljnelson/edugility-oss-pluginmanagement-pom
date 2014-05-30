@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.edugility</groupId>
     <artifactId>edugility-oss-corporate-pom</artifactId>
-    <version>2</version>
+    <version>3</version>
   </parent>
 
   <name>Edugility Open Source Plugin Management POM</name>
@@ -67,12 +67,16 @@
           <version>2.4</version>
         </plugin>
         <plugin>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>3.3</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>2.6</version>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.16</version>
+          <version>2.17</version>
         </plugin>
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
