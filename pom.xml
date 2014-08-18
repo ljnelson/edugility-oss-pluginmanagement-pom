@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.edugility</groupId>
     <artifactId>edugility-oss-corporate-pom</artifactId>
-    <version>3</version>
+    <version>4</version>
   </parent>
 
   <name>Edugility Open Source Plugin Management POM</name>
@@ -53,7 +53,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-ear-plugin</artifactId>
-          <version>2.9</version>
+          <version>2.9.1</version>
           <configuration>
             <version>6</version>
           </configuration>
@@ -64,7 +64,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.4</version>
+          <version>2.5</version>
         </plugin>
         <plugin>
           <artifactId>maven-plugin-plugin</artifactId>
