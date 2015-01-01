@@ -8,7 +8,7 @@
 
   <groupId>com.edugility</groupId>
   <artifactId>edugility-oss-pluginmanagement-pom</artifactId>
-  <version>5</version>
+  <version>6-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <parent>
@@ -26,7 +26,7 @@
     <connection>scm:git:git@github.com:ljnelson/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:ljnelson/${project.artifactId}.git</developerConnection>
     <url>https://github.com/ljnelson/${project.artifactId}/</url>
-    <tag>edugility-oss-pluginmanagement-pom-5</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <dependencyManagement>
