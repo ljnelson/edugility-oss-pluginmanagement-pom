@@ -8,13 +8,13 @@
 
   <groupId>com.edugility</groupId>
   <artifactId>edugility-oss-pluginmanagement-pom</artifactId>
-  <version>7-SNAPSHOT</version>
+  <version>13-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <parent>
     <groupId>com.edugility</groupId>
     <artifactId>edugility-oss-corporate-pom</artifactId>
-    <version>6</version>
+    <version>12</version>
   </parent>
 
   <name>Edugility Open Source Plugin Management POM</name>
@@ -43,6 +43,29 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.5.5</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>2.6.1</version>
+          <configuration>
+            <filesets>
+              <fileset>
+                <directory>${basedir}</directory>
+                <includes>
+                  <include>src/**/*~</include>
+                  <include>*~</include>
+                </includes>
+              </fileset>
+            </filesets>
+          </configuration>
+        </plugin>
+        <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.3</version>
           <configuration>
@@ -50,6 +73,10 @@
               <Xlint:all />
             </compilerArguments>
           </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>2.10</version>
         </plugin>
         <plugin>
           <artifactId>maven-ear-plugin</artifactId>
@@ -61,6 +88,10 @@
         <plugin>
           <artifactId>maven-ejb-plugin</artifactId>
           <version>2.5.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.4.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
@@ -85,7 +116,7 @@
         <plugin>
           <groupId>com.github.github</groupId>
           <artifactId>site-maven-plugin</artifactId>
-          <version>0.9</version>
+          <version>0.12</version>
           <configuration>
             <message>Building site for ${project.artifactId} ${project.version}</message>
           </configuration>
@@ -98,6 +129,11 @@
               <phase>site-deploy</phase>
             </execution>
           </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>2.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
