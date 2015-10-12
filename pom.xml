@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.edugility</groupId>
     <artifactId>edugility-oss-corporate-pom</artifactId>
-    <version>12</version>
+    <version>13</version>
   </parent>
 
   <name>Edugility Open Source Plugin Management POM</name>
